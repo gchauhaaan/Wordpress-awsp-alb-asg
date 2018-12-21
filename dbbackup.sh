@@ -4,18 +4,13 @@
 # Database credentials
 USER="DB-USER"
 PASSWORD="PASSWORD"
-HOST="DB-host-name"
+HOST="localhost"
 DB_NAME="Database-name"
 
 #Backup_Directory_Locations
 BACKUPROOT="/tmp/backups"
 TSTAMP=$(date +"%d-%b-%Y-%H-%M-%S")
 S3BUCKET="s3://s3bucket"
-#LOG_ROOT="logs/dump.log"
-
-#mysqldump  -h <HOST>  -u <USER>  --database <DB_NAME>  -p"password" > $BACKUPROOT/$DB_NAME-$TSTAMP.sql
-
-#or
 
 mysqldump -h$HOST -u$USER $DB_NAME -p$PASSWORD | gzip -9 > $BACKUPROOT/$DB_NAME-$TSTAMP.sql.gz
 
