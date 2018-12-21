@@ -5,4 +5,4 @@ Use the command to make it executable : chmod +x dbbackup.sh
 Schedule it with crontab
 vim /etc/crontab and the following line in the file     
 Run the database backup script on every week at 12.00
-0 0 * * 0  bash /opt/scripts/mysqlbackupS3.sh to  >/dev/null 2>&1 
+0 0 * * 0  bash /opt/scripts/dbbackup.sh to  >/dev/null 2>&1 
