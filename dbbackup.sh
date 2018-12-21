@@ -12,7 +12,7 @@ BACKUPROOT="/tmp/backups"
 TSTAMP=$(date +"%d-%b-%Y-%H-%M-%S")
 S3BUCKET="s3://s3bucket"
 
-mysqldump -h$HOST -u$USER $DB_NAME -p$PASSWORD | gzip -9 > $BACKUPROOT/$DB_NAME-$TSTAMP.sql.gz
+mysqldump -h$HOST -u$USER $DB_NAME -p$PASSWORD | gpg --encrypt -r root | gzip -9 > $BACKUPROOT/$DB_NAME-$TSTAMP.sql.gz
 
 if [ $? -ne 0 ]
  then
