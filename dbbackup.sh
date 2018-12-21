@@ -4,7 +4,7 @@
 # Database credentials
 USER="DB-USER"
 PASSWORD="PASSWORD"
-HOST="localhost"
+HOST="DB-HOST-NAME"
 DB_NAME="Database-name"
 
 #Backup_Directory_Locations
