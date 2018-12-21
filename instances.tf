@@ -38,6 +38,8 @@ resource "aws_instance" "wordpress" {
   #!/bin/bash
   sleep 180
   yum update -y
+  yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  yum install s3cmd --enablerepo=epel -y
   yum install -y mysql55-server
   service mysqld start
   /usr/bin/mysqladmin -u root password 'admin'
